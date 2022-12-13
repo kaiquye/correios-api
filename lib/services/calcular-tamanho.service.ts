@@ -1,7 +1,7 @@
 import {CalcularTamanhoRequest, CalcularTamanhoStructure} from "../structure";
 import {Fail} from "../util/error/error";
 
-class CalcularTamanhoService implements CalcularTamanhoStructure {
+export class CalcularTamanhoService implements CalcularTamanhoStructure {
 
     /**
      * @description this method calculates the dimensions of the products based on cm³ and takes the square root of the final value.

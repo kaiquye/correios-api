@@ -9,7 +9,7 @@ import {Fail} from "../util/error/error";
 import {Urls} from "../util/url/urls";
 
 
- class CalPrazoPreco implements CorreiosApiStructure {
+ export class CalPrazoPreco implements CorreiosApiStructure {
 
     private readonly urlCorreios = Urls.CORREIOS_API
     private readonly axiosInstance: AxiosInstance;
@@ -68,4 +68,3 @@ import {Urls} from "../util/url/urls";
    }
 }
 
-export default new CalPrazoPreco()

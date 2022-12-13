@@ -1,9 +1,13 @@
-import calcularPrecoPrazo from './services/preco-prazo.service'
-import viaCep from './services/validar-cep.service'
-import calcularTamanho from "./services/calcular-tamanho.service";
+import {CalPrazoPreco} from './services/preco-prazo.service'
+import {ValidarCepService} from './services/validar-cep.service'
+import {CalcularTamanhoService} from "./services/calcular-tamanho.service";
 
-export  {
-     calcularPrecoPrazo,
-     viaCep,
-     calcularTamanho
+const calcularPrazoPreco = new CalPrazoPreco()
+const validarCep = new ValidarCepService()
+const calcularDimensoes = new CalcularTamanhoService()
+
+export {
+    calcularPrazoPreco,
+    validarCep,
+    calcularDimensoes
 }

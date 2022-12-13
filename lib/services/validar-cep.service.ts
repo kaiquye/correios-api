@@ -4,7 +4,7 @@ import {Fail} from "../util/error/error";
 import {Urls} from "../util/url/urls";
 
 
-class ValidarCepService implements ValidarCepStructure{
+export class ValidarCepService implements ValidarCepStructure{
 
     private readonly urlViaCep = Urls.VIA_CEP
     private readonly axiosInstance: AxiosInstance;
