@@ -12,15 +12,13 @@ export interface calcPrecoPrazoRequestStructure {
      * @description cdEmpresa: o codigo está disponível no corpo do contrato firmado com os Correios
      */
     cdEmpresa?: string;
+
+    cdServico: [] | string;
+
     /**
      * @description senha: associada ao seu codigo administrativo. A senha inicial corresponde aos 8
      * primeiros digitos do CPNJ informado no contrato.
      */
-
-    /**
-     * @description
-     */
-    cdServico: [] | string;
     dsSenha?: string;
     /**
      * @description cep origem: CEP de origem sem hifen: Exemplo: 30850100
