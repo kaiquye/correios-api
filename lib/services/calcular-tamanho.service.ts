@@ -2,6 +2,12 @@ import {CalcularTamanhoRequest, CalcularTamanhoStructure} from "../structure/str
 import {Fail} from "../util/error/error";
 
 class CalcularTamanhoService implements CalcularTamanhoStructure {
+
+    /**
+     * @description this method calculates the dimensions of the products based on cm³ and takes the square root of the final value.
+     * These server values as a parameter cannot be taken seriously
+     * @param produtos
+     */
     calcularTamanho(produtos: CalcularTamanhoRequest[]): CalcularTamanhoRequest {
         let cm3 = 0
         let peso = 0

@@ -12,8 +12,10 @@ class ValidarCepService implements ValidarCepStructure{
     constructor() {
         this.axiosInstance = new AxiosInstance(this.urlViaCep)
     }
+
     async consultarCep(cep: string): Promise<CepResponse> {
         try{
+            // queries whether the zip code sent is fake or not, if not, it returns an execution
             const response = await this.axiosInstance.GET(`${this.urlViaCep}${cep}/json`)
             return response.data
         }catch (e) {

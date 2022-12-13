@@ -8,9 +8,7 @@ import {parseString} from 'xml2js'
 import {Fail} from "../util/error/error";
 import {Urls} from "../util/url/urls";
 
-/**
- * @class CalPrazoPreco: Calculador de preços e prazos de encomendas.
- */
+
  class CalPrazoPreco implements CorreiosApiStructure {
 
     private readonly urlCorreios = Urls.CORREIOS_API
@@ -20,11 +18,13 @@ import {Urls} from "../util/url/urls";
      this.axiosInstance = new AxiosInstance(this.urlCorreios)
     }
 
-    /**
-     * @param (calcPrecoPrazoRequestStructure) data: Body da requisição para os correios.
-     * @return (calcPrecoPrazoResponseStructure)
-     */
+     /**
+      * @description this method calculates the price and term of the product informed to it. It uses the dimensions of the product as a basis for calculation.
+      * @param data
+      * @return {calcPrecoPrazoResponseStructure}
+      */
    async calcPrecoPrazo(data: calcPrecoPrazoRequestStructure): Promise<calcPrecoPrazoResponseStructure | any> {
+       // request for the post office api passing the parameters by url query
         const data_ = await this.axiosInstance.GET('/calculador/CalcPrecoPrazo.aspx?', {
             sCepOrigem: data.cepOrigem,
             sCepDestino: data.cepDestino,
@@ -38,6 +38,7 @@ import {Urls} from "../util/url/urls";
 
        let result_ = undefined
 
+        // converting xml responses to json using xml2js library
         await parseString(data_.data, async (err, result) => {
             if(err) {
                 throw new Fail(err.message)
