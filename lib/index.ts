@@ -4,7 +4,7 @@ import calcularTamanho from "./services/calcular-tamanho.service";
 
 calcularPrecoPrazo.calcPrecoPrazo('' as any)
 
-export default {
+export  {
      calcularPrecoPrazo,
      viaCep,
      calcularTamanho
