@@ -1,4 +1,7 @@
 # correios-api
+```
+ npm i correios-services
+```
 
 Código do serviço:
 
